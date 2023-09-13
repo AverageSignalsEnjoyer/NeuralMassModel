@@ -32,7 +32,7 @@ sigma = 0.05;
 
 % ---- Simulation parameters ----
 fs   = 100;
-dur  = 3;
+dur  = 5;
 tVec = 1/fs:1/fs:dur;
 
 % ---- Network parameters ----
@@ -80,21 +80,21 @@ for i = 1:N
 
         if p-m == 1 && n == q
             Cf(j, i) = 20;
-            Cb(i, j) = 5; % uncomment for feedback
+            % Cb(i, j) = 5; % uncomment for feedback
             D(i, j) = 0.01;
             D(j, i) = 0.01;
         end
 
         if q-n == 1 && p == m
             Cf(j, i) = 20;
-            Cb(i, j) = 5; % uncomment for feedback
+            % Cb(i, j) = 5; % uncomment for feedback
             D(i, j) = 0.01;
             D(j, i) = 0.01;
         end
 
         if q-n == 1 && p-m == 1
             Cf(j, i) = 20;
-            Cb(i, j) = 5; % uncomment for feedback
+            % Cb(i, j) = 5; % uncomment for feedback
             D(i, j) = 0.01;
             D(j, i) = 0.01;
         end
@@ -214,4 +214,4 @@ for i = 1:nT
     imagesc(reshape(temp(:, i), dim))
 end
 
-save('y_fb', 'y', 'sol', 'dim', 'fs', 'tVec')
+save('y', 'y', 'sol', 'dim', 'fs', 'tVec')

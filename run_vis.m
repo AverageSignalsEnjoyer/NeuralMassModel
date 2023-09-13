@@ -1,7 +1,7 @@
 clear all
 close all
 
-load y_fb
+load y
 
 f = figure;
 f.Position = [1138 689 862 649];
@@ -24,7 +24,7 @@ ylabel('Neural Mass Index (y-dim)')
 ax = gca;
 ax.FontSize = 16;
 
-vidfile = VideoWriter('with_feedback.mp4','MPEG-4');
+vidfile = VideoWriter('without_feedback.mp4','MPEG-4');
 vidFile.Quality = 100;
 open(vidfile);
 
